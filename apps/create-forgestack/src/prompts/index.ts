@@ -4,12 +4,12 @@ import type {
   ForgeConfig,
   ProjectType,
   FrontendFramework,
+  FrontendState,
+  FrontendApiClient,
   BackendFramework,
-  DatabaseProvider,
-  DatabaseORM,
+  BackendArchitecture,
   CacheProvider,
   AuthStrategy,
-  QueueProvider,
   CloudProvider,
   AwsCompute,
   AwsDatabase,
@@ -37,7 +37,7 @@ export async function promptUserConfig(initialName?: string): Promise<ForgeConfi
   const projectType = (await p.select({
     message: 'What do you want to build?',
     options: [
-      { value: 'fullstack', label: 'Full-Stack Application', hint: 'Frontend + Backend + Database + Infra' },
+      { value: 'fullstack', label: 'Full-Stack Application', hint: 'Monorepo: Frontend + Backend + Shared Packages + Infra' },
       { value: 'backend', label: 'Backend Only', hint: 'Modular API / Microservice + DB + Cache + Workers' },
       { value: 'frontend', label: 'Frontend Only', hint: 'Next.js or React + Tailwind + State' },
       { value: 'infrastructure', label: 'Infrastructure Only', hint: 'Terraform, AWS Architecture & Kubernetes Manifests' },
@@ -52,7 +52,6 @@ export async function promptUserConfig(initialName?: string): Promise<ForgeConfi
   const isFullstack = projectType === 'fullstack';
   const hasFrontend = isFullstack || projectType === 'frontend';
   const hasBackend = isFullstack || projectType === 'backend';
-  const isInfraOnly = projectType === 'infrastructure';
 
   // 3. Frontend Questions
   let frontendConfig: ForgeConfig['frontend'] = undefined;
@@ -84,12 +83,41 @@ export async function promptUserConfig(initialName?: string): Promise<ForgeConfi
       process.exit(0);
     }
 
+    const state = (await p.select({
+      message: 'Select State Management:',
+      options: [
+        { value: 'zustand', label: 'Zustand', hint: 'Lightweight reactive store' },
+        { value: 'redux', label: 'Redux Toolkit', hint: 'Predictable centralized store' },
+        { value: 'tanstack-query', label: 'TanStack Query', hint: 'Server state management' },
+        { value: 'none', label: 'None (React state only)', hint: 'useState / useReducer' },
+      ],
+    })) as FrontendState;
+
+    if (p.isCancel(state)) {
+      p.cancel('Operation cancelled.');
+      process.exit(0);
+    }
+
+    const apiClient = (await p.select({
+      message: 'Select API Client:',
+      options: [
+        { value: 'tanstack-query', label: 'TanStack Query (Fetch)', hint: 'Async data synchronization' },
+        { value: 'axios', label: 'Axios', hint: 'Promise-based HTTP client' },
+        { value: 'fetch', label: 'Native Fetch', hint: 'Standard Web API' },
+      ],
+    })) as FrontendApiClient;
+
+    if (p.isCancel(apiClient)) {
+      p.cancel('Operation cancelled.');
+      process.exit(0);
+    }
+
     frontendConfig = {
       framework,
       language: 'typescript',
       styling,
-      state: 'zustand',
-      apiClient: 'tanstack-query',
+      state,
+      apiClient,
     };
   }
 
@@ -114,10 +142,24 @@ export async function promptUserConfig(initialName?: string): Promise<ForgeConfi
       process.exit(0);
     }
 
+    const architecture = (await p.select({
+      message: 'Select Backend Architecture Pattern:',
+      options: [
+        { value: 'modular-monolith', label: 'Modular Monolith', hint: 'Domain modules with encapsulated services & routes' },
+        { value: 'clean-architecture', label: 'Clean Architecture', hint: 'Separation into Entities, Use Cases, Repositories' },
+        { value: 'mvc', label: 'MVC (Model-View-Controller)', hint: 'Traditional layered structure' },
+      ],
+    })) as BackendArchitecture;
+
+    if (p.isCancel(architecture)) {
+      p.cancel('Operation cancelled.');
+      process.exit(0);
+    }
+
     backendConfig = {
       framework,
       language: 'typescript',
-      architecture: 'modular-monolith',
+      architecture,
       port: 4000,
     };
 

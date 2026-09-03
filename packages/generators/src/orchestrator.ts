@@ -1,6 +1,11 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { validateForgeConfig, type ForgeConfig } from '@forgestack/core';
+import {
+  renderSharedTypesPackage,
+  renderSharedConfigPackage,
+  renderWorkerApp,
+} from '@forgestack/templates';
 import type { GeneratedFile } from './types.js';
 import { generateBackendFiles } from './backend/index.js';
 import { generateFrontendFiles } from './frontend/index.js';
@@ -30,27 +35,89 @@ export async function orchestrateProjectGeneration(config: ForgeConfig): Promise
   const backendBase = isFullstack ? 'apps/api' : '.';
   const frontendBase = isFullstack ? 'apps/web' : '.';
 
-  // 1. Root Monorepo structure for Full-Stack
+  // 1. Rich Monorepo structure for Full-Stack (pnpm + Turborepo)
   if (isFullstack) {
     const rootPkg = {
       name: config.project.name,
       version: '0.1.0',
       private: true,
-      workspaces: ['apps/*'],
+      packageManager: 'pnpm@9.15.5',
       scripts: {
-        dev: 'npm run dev --workspaces',
-        build: 'npm run build --workspaces',
-        test: 'npm run test --workspaces',
-        clean: 'npm run clean --workspaces',
+        build: 'turbo run build',
+        dev: 'turbo run dev',
+        test: 'turbo run test',
+        lint: 'turbo run lint',
+        clean: 'turbo run clean',
       },
       devDependencies: {
+        turbo: '^2.4.4',
         typescript: '^5.7.3',
+        rimraf: '^6.0.1',
       },
     };
+
     files.push({
       path: 'package.json',
       content: JSON.stringify(rootPkg, null, 2),
     });
+
+    const pnpmWorkspace = `packages:
+  - 'apps/*'
+  - 'packages/*'
+`;
+    files.push({
+      path: 'pnpm-workspace.yaml',
+      content: pnpmWorkspace,
+    });
+
+    const turboJson = {
+      $schema: 'https://turbo.build/schema.json',
+      tasks: {
+        build: {
+          dependsOn: ['^build'],
+          outputs: ['dist/**', '.next/**'],
+        },
+        dev: {
+          cache: false,
+          persistent: true,
+        },
+        test: {
+          dependsOn: ['^build'],
+          outputs: [],
+        },
+        lint: {
+          outputs: [],
+        },
+        clean: {
+          cache: false,
+        },
+      },
+    };
+
+    files.push({
+      path: 'turbo.json',
+      content: JSON.stringify(turboJson, null, 2),
+    });
+
+    // Shared packages: packages/types
+    const typesPkg = renderSharedTypesPackage(config.project.name);
+    files.push({ path: 'packages/types/package.json', content: typesPkg.packageJson });
+    files.push({ path: 'packages/types/tsconfig.json', content: typesPkg.tsconfig });
+    files.push({ path: 'packages/types/src/index.ts', content: typesPkg.indexTs });
+
+    // Shared packages: packages/config
+    const configPkg = renderSharedConfigPackage(config.project.name);
+    files.push({ path: 'packages/config/package.json', content: configPkg.packageJson });
+    files.push({ path: 'packages/config/tsconfig.json', content: configPkg.tsconfig });
+    files.push({ path: 'packages/config/src/index.ts', content: configPkg.indexTs });
+
+    // Dedicated Worker app: apps/worker (if BullMQ is enabled)
+    if (config.queue?.provider === 'bullmq') {
+      const workerApp = renderWorkerApp(config.project.name);
+      files.push({ path: 'apps/worker/package.json', content: workerApp.packageJson });
+      files.push({ path: 'apps/worker/tsconfig.json', content: workerApp.tsconfig });
+      files.push({ path: 'apps/worker/src/index.ts', content: workerApp.indexTs });
+    }
   }
 
   // 2. Backend Files

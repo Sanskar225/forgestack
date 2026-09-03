@@ -14,8 +14,9 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@forgestack/core": "*",
-    "@forgestack/generators": "*",
+    "@forgestack/core": "workspace:*",
+    "@forgestack/generators": "workspace:*",
+    "@forgestack/templates": "workspace:*",
     "@clack/prompts": "^0.9.1",
     "commander": "^13.1.0",
     "picocolors": "^1.1.1",
