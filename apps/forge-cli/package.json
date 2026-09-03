@@ -1,0 +1,29 @@
+{
+  "name": "@sanskar225/forge-cli",
+  "version": "1.0.0",
+  "description": "Local architecture manager CLI for ForgeStack projects",
+  "bin": {
+    "forge": "./dist/bin/forge.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@forgestack/core": "*",
+    "@forgestack/generators": "*",
+    "@clack/prompts": "^0.9.1",
+    "commander": "^13.1.0",
+    "picocolors": "^1.1.1",
+    "yaml": "^2.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "@types/node": "^22.13.5",
+    "rimraf": "^6.0.1"
+  }
+}
