@@ -1,5 +1,5 @@
 {
-  "name": "@forgestack/generators",
+  "name": "@sanskar225/generators",
   "version": "1.0.0",
   "description": "Deterministic application, infrastructure, observability, and CI/CD code generators for ForgeStack",
   "main": "./dist/index.js",
@@ -16,9 +16,16 @@
     "dev": "tsc --watch",
     "clean": "rimraf dist"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
-    "@forgestack/core": "workspace:*",
-    "@forgestack/templates": "workspace:*",
+    "@sanskar225/core": "workspace:*",
+    "@sanskar225/templates": "workspace:*",
     "picocolors": "^1.1.1",
     "yaml": "^2.7.0"
   },

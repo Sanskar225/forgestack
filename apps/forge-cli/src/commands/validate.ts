@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import pc from 'picocolors';
-import { parseForgeConfig, validateForgeConfig } from '@forgestack/core';
+import { parseForgeConfig, validateForgeConfig } from '@sanskar225/core';
 
 export async function loadLocalConfig(cwd = process.cwd()) {
   const configPath = path.join(cwd, 'forge.config.yaml');

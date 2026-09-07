@@ -1,5 +1,5 @@
 {
-  "name": "@forgestack/templates",
+  "name": "@sanskar225/templates",
   "version": "1.0.0",
   "description": "Modular template registry and skeletons for ForgeStack",
   "main": "./dist/index.js",
@@ -16,8 +16,15 @@
     "dev": "tsc --watch",
     "clean": "rimraf dist"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
-    "@forgestack/core": "workspace:*"
+    "@sanskar225/core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.7.3",

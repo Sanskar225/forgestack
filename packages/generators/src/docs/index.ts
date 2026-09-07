@@ -5,7 +5,7 @@ import {
   resolveBackendDependencies,
   resolveFrontendDependencies,
   type ForgeConfig,
-} from '@forgestack/core';
+} from '@sanskar225/core';
 import type { GeneratedFile } from '../types.js';
 
 export function generateDocsAndConfigs(config: ForgeConfig, isMonorepo: boolean): GeneratedFile[] {

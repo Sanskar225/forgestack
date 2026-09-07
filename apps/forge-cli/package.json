@@ -13,10 +13,17 @@
     "dev": "tsc --watch",
     "clean": "rimraf dist"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
-    "@forgestack/core": "workspace:*",
-    "@forgestack/generators": "workspace:*",
-    "@forgestack/templates": "workspace:*",
+    "@sanskar225/core": "workspace:*",
+    "@sanskar225/generators": "workspace:*",
+    "@sanskar225/templates": "workspace:*",
     "@clack/prompts": "^0.9.1",
     "commander": "^13.1.0",
     "picocolors": "^1.1.1",

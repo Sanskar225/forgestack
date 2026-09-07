@@ -7,8 +7,8 @@ import {
   autoFixForgeConfig,
   renderAsciiArchitecture,
   type ForgeConfig,
-} from '@forgestack/core';
-import { orchestrateProjectGeneration, writeGeneratedFiles } from '@forgestack/generators';
+} from '@sanskar225/core';
+import { orchestrateProjectGeneration, writeGeneratedFiles } from '@sanskar225/generators';
 import { BUILTIN_PRESETS } from './presets/index.js';
 import { promptUserConfig } from './prompts/index.js';
 

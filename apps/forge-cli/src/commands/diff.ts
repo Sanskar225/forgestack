@@ -1,7 +1,7 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import pc from 'picocolors';
-import { orchestrateProjectGeneration } from '@forgestack/generators';
+import { orchestrateProjectGeneration } from '@sanskar225/generators';
 import { loadLocalConfig } from './validate.js';
 
 export async function runDiffCommand(): Promise<void> {

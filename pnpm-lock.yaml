@@ -29,13 +29,13 @@ importers:
       '@clack/prompts':
         specifier: ^0.9.1
         version: 0.9.1
-      '@forgestack/core':
+      '@sanskar225/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@forgestack/generators':
+      '@sanskar225/generators':
         specifier: workspace:*
         version: link:../../packages/generators
-      '@forgestack/templates':
+      '@sanskar225/templates':
         specifier: workspace:*
         version: link:../../packages/templates
       commander:
@@ -63,13 +63,13 @@ importers:
       '@clack/prompts':
         specifier: ^0.9.1
         version: 0.9.1
-      '@forgestack/core':
+      '@sanskar225/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@forgestack/generators':
+      '@sanskar225/generators':
         specifier: workspace:*
         version: link:../../packages/generators
-      '@forgestack/templates':
+      '@sanskar225/templates':
         specifier: workspace:*
         version: link:../../packages/templates
       commander:
@@ -116,10 +116,10 @@ importers:
 
   packages/generators:
     dependencies:
-      '@forgestack/core':
+      '@sanskar225/core':
         specifier: workspace:*
         version: link:../core
-      '@forgestack/templates':
+      '@sanskar225/templates':
         specifier: workspace:*
         version: link:../templates
       picocolors:
@@ -141,7 +141,7 @@ importers:
 
   packages/templates:
     dependencies:
-      '@forgestack/core':
+      '@sanskar225/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:

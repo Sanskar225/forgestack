@@ -1,4 +1,4 @@
-import type { ForgeConfig } from '@forgestack/core';
+import type { ForgeConfig } from '@sanskar225/core';
 
 export const BUILTIN_PRESETS: Record<string, (name: string) => ForgeConfig> = {
   saas: (name: string): ForgeConfig => ({

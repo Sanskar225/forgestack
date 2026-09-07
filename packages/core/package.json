@@ -1,5 +1,5 @@
 {
-  "name": "@forgestack/core",
+  "name": "@sanskar225/core",
   "version": "1.0.0",
   "description": "Core architecture engine, schema validator, and dependency graph resolver for ForgeStack",
   "main": "./dist/index.js",
@@ -16,6 +16,13 @@
     "dev": "tsc --watch",
     "clean": "rimraf dist"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "dependencies": {
     "zod": "^3.24.2",
     "yaml": "^2.7.0",

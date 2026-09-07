@@ -1,4 +1,4 @@
-import type { ForgeConfig } from '@forgestack/core';
+import type { ForgeConfig } from '@sanskar225/core';
 import type { GeneratedFile } from '../types.js';
 
 export function generateDatabaseFiles(config: ForgeConfig, basePath: string): GeneratedFile[] {

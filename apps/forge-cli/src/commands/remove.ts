@@ -1,6 +1,6 @@
 import { promises as fs } from 'node:fs';
 import pc from 'picocolors';
-import { serializeForgeConfig, validateForgeConfig } from '@forgestack/core';
+import { serializeForgeConfig, validateForgeConfig } from '@sanskar225/core';
 import { loadLocalConfig } from './validate.js';
 import { runGenerateCommand } from './generate.js';
 
