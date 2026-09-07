@@ -29,13 +29,13 @@ importers:
       '@clack/prompts':
         specifier: ^0.9.1
         version: 0.9.1
-      '@sanskar225/core':
+      '@sanskar22/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@sanskar225/generators':
+      '@sanskar22/generators':
         specifier: workspace:*
         version: link:../../packages/generators
-      '@sanskar225/templates':
+      '@sanskar22/templates':
         specifier: workspace:*
         version: link:../../packages/templates
       commander:
@@ -63,13 +63,13 @@ importers:
       '@clack/prompts':
         specifier: ^0.9.1
         version: 0.9.1
-      '@sanskar225/core':
+      '@sanskar22/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@sanskar225/generators':
+      '@sanskar22/generators':
         specifier: workspace:*
         version: link:../../packages/generators
-      '@sanskar225/templates':
+      '@sanskar22/templates':
         specifier: workspace:*
         version: link:../../packages/templates
       commander:
@@ -116,10 +116,10 @@ importers:
 
   packages/generators:
     dependencies:
-      '@sanskar225/core':
+      '@sanskar22/core':
         specifier: workspace:*
         version: link:../core
-      '@sanskar225/templates':
+      '@sanskar22/templates':
         specifier: workspace:*
         version: link:../templates
       picocolors:
@@ -141,7 +141,7 @@ importers:
 
   packages/templates:
     dependencies:
-      '@sanskar225/core':
+      '@sanskar22/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:

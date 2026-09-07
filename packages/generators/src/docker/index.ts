@@ -1,4 +1,4 @@
-import type { ForgeConfig } from '@sanskar225/core';
+import type { ForgeConfig } from '@sanskar22/core';
 import type { GeneratedFile } from '../types.js';
 
 export function generateDockerFiles(config: ForgeConfig, isMonorepo: boolean): GeneratedFile[] {

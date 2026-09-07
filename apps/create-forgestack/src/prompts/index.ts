@@ -15,7 +15,7 @@ import type {
   AwsDatabase,
   AwsConfig,
   IaCProvider,
-} from '@sanskar225/core';
+} from '@sanskar22/core';
 
 export async function promptUserConfig(initialName?: string): Promise<ForgeConfig> {
   p.intro(pc.bgCyan(pc.black(' 🚀 ForgeStack: Architecture-Aware Generator ')));

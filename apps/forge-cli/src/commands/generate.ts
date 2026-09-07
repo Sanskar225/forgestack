@@ -1,5 +1,5 @@
 import pc from 'picocolors';
-import { orchestrateProjectGeneration, writeGeneratedFiles } from '@sanskar225/generators';
+import { orchestrateProjectGeneration, writeGeneratedFiles } from '@sanskar22/generators';
 import { loadLocalConfig } from './validate.js';
 import { runVisualizeCommand } from './visualize.js';
 

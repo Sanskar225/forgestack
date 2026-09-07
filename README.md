@@ -12,11 +12,11 @@
 
 ### 1. Global Scaffold CLI
 ```bash
-npx @sanskar225/create-forgestack [project-name]
+npx @sanskar22/create-forgestack [project-name]
 ```
 Or scaffold directly with a production preset:
 ```bash
-npx @sanskar225/create-forgestack my-app --preset saas
+npx @sanskar22/create-forgestack my-app --preset saas
 ```
 
 Available Presets:
@@ -65,7 +65,7 @@ npx forge diff
 ```text
 forgestack/
 ├── apps/
-│   ├── create-forgestack/     # npx @sanskar225/create-forgestack CLI
+│   ├── create-forgestack/     # npx @sanskar22/create-forgestack CLI
 │   └── forge-cli/             # Local project CLI binary ("forge")
 │
 ├── packages/

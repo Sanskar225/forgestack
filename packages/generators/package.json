@@ -1,5 +1,5 @@
 {
-  "name": "@sanskar225/generators",
+  "name": "@sanskar22/generators",
   "version": "1.0.0",
   "description": "Deterministic application, infrastructure, observability, and CI/CD code generators for ForgeStack",
   "main": "./dist/index.js",
@@ -24,8 +24,8 @@
     "README.md"
   ],
   "dependencies": {
-    "@sanskar225/core": "workspace:*",
-    "@sanskar225/templates": "workspace:*",
+    "@sanskar22/core": "workspace:*",
+    "@sanskar22/templates": "workspace:*",
     "picocolors": "^1.1.1",
     "yaml": "^2.7.0"
   },

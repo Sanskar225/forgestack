@@ -1,4 +1,4 @@
-import { resolveBackendDependencies, type ForgeConfig } from '@sanskar225/core';
+import { resolveBackendDependencies, type ForgeConfig } from '@sanskar22/core';
 import type { GeneratedFile } from '../types.js';
 
 export function generateBackendFiles(config: ForgeConfig, basePath: string): GeneratedFile[] {

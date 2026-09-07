@@ -1,4 +1,4 @@
-import { resolveFrontendDependencies, type ForgeConfig } from '@sanskar225/core';
+import { resolveFrontendDependencies, type ForgeConfig } from '@sanskar22/core';
 import type { GeneratedFile } from '../types.js';
 
 export function generateFrontendFiles(config: ForgeConfig, basePath: string): GeneratedFile[] {

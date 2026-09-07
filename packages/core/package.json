@@ -1,5 +1,5 @@
 {
-  "name": "@sanskar225/core",
+  "name": "@sanskar22/core",
   "version": "1.0.0",
   "description": "Core architecture engine, schema validator, and dependency graph resolver for ForgeStack",
   "main": "./dist/index.js",

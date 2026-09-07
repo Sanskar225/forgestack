@@ -1,5 +1,5 @@
 {
-  "name": "@sanskar225/templates",
+  "name": "@sanskar22/templates",
   "version": "1.0.0",
   "description": "Modular template registry and skeletons for ForgeStack",
   "main": "./dist/index.js",
@@ -24,7 +24,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@sanskar225/core": "workspace:*"
+    "@sanskar22/core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.7.3",

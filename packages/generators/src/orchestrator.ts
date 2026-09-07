@@ -1,11 +1,11 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
-import { validateForgeConfig, type ForgeConfig } from '@sanskar225/core';
+import { validateForgeConfig, type ForgeConfig } from '@sanskar22/core';
 import {
   renderSharedTypesPackage,
   renderSharedConfigPackage,
   renderWorkerApp,
-} from '@sanskar225/templates';
+} from '@sanskar22/templates';
 import type { GeneratedFile } from './types.js';
 import { generateBackendFiles } from './backend/index.js';
 import { generateFrontendFiles } from './frontend/index.js';

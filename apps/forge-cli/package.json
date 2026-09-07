@@ -1,5 +1,5 @@
 {
-  "name": "@sanskar225/forge-cli",
+  "name": "@sanskar22/forge-cli",
   "version": "1.0.0",
   "description": "Local architecture manager CLI for ForgeStack projects",
   "bin": {
@@ -21,9 +21,9 @@
     "README.md"
   ],
   "dependencies": {
-    "@sanskar225/core": "workspace:*",
-    "@sanskar225/generators": "workspace:*",
-    "@sanskar225/templates": "workspace:*",
+    "@sanskar22/core": "workspace:*",
+    "@sanskar22/generators": "workspace:*",
+    "@sanskar22/templates": "workspace:*",
     "@clack/prompts": "^0.9.1",
     "commander": "^13.1.0",
     "picocolors": "^1.1.1",
