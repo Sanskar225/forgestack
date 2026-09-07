@@ -1,6 +1,6 @@
 {
   "name": "@sanskar22/create-forgestack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Architecture-aware application & infrastructure generator CLI",
   "bin": {
     "create-forgestack": "./dist/bin/index.js"
@@ -21,9 +21,9 @@
     "README.md"
   ],
   "dependencies": {
-    "@sanskar22/core": "workspace:*",
-    "@sanskar22/generators": "workspace:*",
-    "@sanskar22/templates": "workspace:*",
+    "@sanskar22/core": "^1.0.1",
+    "@sanskar22/generators": "^1.0.1",
+    "@sanskar22/templates": "^1.0.1",
     "@clack/prompts": "^0.9.1",
     "commander": "^13.1.0",
     "picocolors": "^1.1.1",

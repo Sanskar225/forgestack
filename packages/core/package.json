@@ -1,6 +1,6 @@
 {
   "name": "@sanskar22/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Core architecture engine, schema validator, and dependency graph resolver for ForgeStack",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
