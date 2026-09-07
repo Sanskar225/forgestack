@@ -2,9 +2,21 @@
 
 > **Architecture-aware CLI that generates production-ready frontend, backend, cloud infrastructure, deployment, monitoring, and CI/CD configurations from your requirements.**
 
-[![CI Pipeline](https://github.com/Sanskar225/forgestack/actions/workflows/ci.yml/badge.svg)](https://github.com/Sanskar225/forgestack)
+[![npm version](https://img.shields.io/npm/v/@sanskar22/create-forgestack.svg?color=cb3837)](https://www.npmjs.com/package/@sanskar22/create-forgestack)
 [![Turborepo](https://img.shields.io/badge/monorepo-turborepo-blue)](https://turbo.build)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+## 📦 Published Packages on NPM Registry
+
+| Package | Version | Description |
+| :--- | :--- | :--- |
+| [**`@sanskar22/create-forgestack`**](https://www.npmjs.com/package/@sanskar22/create-forgestack) | ![npm](https://img.shields.io/npm/v/@sanskar22/create-forgestack?color=red) | Global scaffolding CLI (`npx @sanskar22/create-forgestack`) |
+| [**`@sanskar22/forge-cli`**](https://www.npmjs.com/package/@sanskar22/forge-cli) | ![npm](https://img.shields.io/npm/v/@sanskar22/forge-cli?color=red) | Local project manager binary (`forge` / `npx @sanskar22/forge-cli`) |
+| [**`@sanskar22/core`**](https://www.npmjs.com/package/@sanskar22/core) | ![npm](https://img.shields.io/npm/v/@sanskar22/core?color=red) | Deterministic Architecture Engine & Rule Validator |
+| [**`@sanskar22/templates`**](https://www.npmjs.com/package/@sanskar22/templates) | ![npm](https://img.shields.io/npm/v/@sanskar22/templates?color=red) | Modular skeletons & configs |
+| [**`@sanskar22/generators`**](https://www.npmjs.com/package/@sanskar22/generators) | ![npm](https://img.shields.io/npm/v/@sanskar22/generators?color=red) | Code, Docker, Terraform & K8s emitters |
 
 ---
 
